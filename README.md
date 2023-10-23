@@ -8,7 +8,9 @@ The code is in early stages.
 
 The code can only get all images from the current active tab and download them. Right now, they can only run on a browser's console.
 
-### How to Run on Browser Console
+I've decided to add other languages' codes as well to see which ones perform better and with more functionality and ease.
+
+### How to Run `main.js` on Browser Console
 
 1. On Chrome, press `Ctrl+Shift+I` to open the browser's tool.
 2. Click on the `Console` tab.
