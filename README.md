@@ -13,3 +13,9 @@ The code can only get all images from the current active tab and download them. 
 1. On Chrome, press `Ctrl+Shift+I` to open the browser's tool.
 2. Click on the `Console` tab.
 3. Copy and paste the code from `main.js` to the console.
+
+#### Note
+
+Since downloading this way does not work for several websites when the headers are not properly defined, it is better to download a CORS Unblocker extension. Any should work as long as it bypasses the "XMLHttpRequest" and "fetch" rejections by altering the "Access-Control-Allow-Origin" and "Access-Control-Allow-Methods" headers for every request that the browser receives.
+
+The one I used is [CORS Unblock](https://webextension.org/listing/access-control.html).
