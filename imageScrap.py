@@ -1,26 +1,19 @@
 import requests
 from bs4 import BeautifulSoup
-import os
-import re
 
-url = input("Enter the url of the webpage to download images from: ")
-response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
 
-soup = BeautifulSoup(response.text, 'html.parser')
+URL = "https://www.buondua.com"  # Replace with the website's URL
+# getURL = requests.get(URL, headers={"User-Agent":"Mozilla/5.0"})
+
+# corsApiHost = "https://cors-anywhere.herokuapp.com/"
+# URL = f"{corsApiHost}buondua.com/"
+getURL = requests.get(URL, headers={"User-Agent":"Mozilla/5.0"})
+
+soup = BeautifulSoup(getURL.text, 'html.parser')
 images = soup.find_all('img')
 
-directory = "fetchedImages"
-if not os.path.exists(directory):
-    os.makedirs(directory)
+imageSources = []
+for image in images:
+    imageSources.append(image.get('src'))
 
-for i, image in enumerate(images):
-    image_url = image.get('src')
-    if 'http' not in image_url:
-        image_url = '{}{}'.format(url, image_url)
-    response = requests.get(image_url)
-    filename = re.search(r'/([\w_-]+[.](jpg|gif|png))$', image_url)
-    if not filename:
-        print("Regex didn't match with the url: {}".format(image_url))
-        continue
-    with open(os.path.join(directory, 'image-{}.jpg'.format(i+1)), 'wb') as f:
-        f.write(response.content)
+print(imageSources)
