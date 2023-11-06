@@ -10,6 +10,8 @@ The code can only get all images from the current active tab and download them. 
 
 I've decided to add other languages' codes as well to see which ones perform better and with more functionality and ease.
 
+Will try to see how it works by making a Firefox extension since Firefox is my go-to and I want to create one for my personal browser firstly. 🥸
+
 ### How to Run `main.js` on Browser Console
 
 1. On Chrome, press `Ctrl+Shift+I` to open the browser's tool.
